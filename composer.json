@@ -1,0 +1,15 @@
+{
+    "name": "dat/asmphp2",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "buidodat",
+            "email": "adudanchoi2000@gmail.com"
+        }
+    ],
+    "require": {}
+}
