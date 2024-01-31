@@ -10,6 +10,8 @@ use App\Controllers\ShopController;
 use App\Controllers\CartController;
 use App\Controllers\ProductDentailController;
 use App\Controllers\CheckoutController;
+
+use App\Controllers\ProductController;
 require_once __DIR__."/env.php";
 require_once __DIR__."/config.php";
 
@@ -28,5 +30,10 @@ Router::get("/shop",[ShopController::class, 'index']);
 Router::get("/cart",[CartController::class, 'index']);
 Router::get("/productdentail",[ProductDentailController::class, 'detail']);
 Router::get("/checkout",[CheckoutController::class, 'index']);
+
+
+Router::get("/product/list",[ProductController::class, 'index']);
+Router::get("/product/create",[ProductController::class, 'create']);
+Router::post("/product/create",[ProductController::class, 'store']);
 
 $router->resolve();

@@ -7,4 +7,10 @@ class BaseController{
         include_once "app/Views/$path.php";
         include_once "app/Views/client/footer.php";
     }
+    public function viewadmin($path, $data=[]){
+        extract($data);
+        include_once "app/Views/admin/header.php";
+        include_once "app/Views/$path.php";
+        include_once "app/Views/admin/footer.php";
+    }
 }
