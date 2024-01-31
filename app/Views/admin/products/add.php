@@ -1,10 +1,10 @@
 <div class="app-title">
     <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Danh sách sản phẩm</li>
-        <li class="breadcrumb-item"><a href="#">Thêm sản phẩm</a></li>
+        <li class="breadcrumb-item">Quản lý sản phẩm</li>
+        <li class="breadcrumb-item"><a href="#">Tạo mới sản phẩm</a></li>
     </ul>
 </div>
-<form action="<?=ROOT_PATH?>product/create" method="post" enctype='multipart/form-data'>
+<form action="<?=ROOT_PATH?>admin/product/create" method="post" enctype='multipart/form-data'>
     <div class="row">
         <div class="col-md-12">
             <div class="tile">

@@ -31,9 +31,12 @@ Router::get("/cart",[CartController::class, 'index']);
 Router::get("/productdentail",[ProductDentailController::class, 'detail']);
 Router::get("/checkout",[CheckoutController::class, 'index']);
 
+//admin 
+Router::get("/admin/product/list",[ProductController::class, 'index']);
+Router::get("/admin/product/create",[ProductController::class, 'create']);
+Router::post("/admin/product/create",[ProductController::class, 'storeCreate']);
 
-Router::get("/product/list",[ProductController::class, 'index']);
-Router::get("/product/create",[ProductController::class, 'create']);
-Router::post("/product/create",[ProductController::class, 'store']);
+Router::get("/admin/product/edit",[ProductController::class, 'edit']);
+Router::post("/admin/product/edit",[ProductController::class, 'storeEdit']);
 
 $router->resolve();

@@ -1,6 +1,7 @@
 <div class="app-title">
             <ul class="app-breadcrumb breadcrumb side">
-                <li class="breadcrumb-item active"><a href="#"><b>Danh sách sản phẩm</b></a></li>
+                <li class="breadcrumb-item">Quản lý sản phẩm</li>
+                <li class="breadcrumb-item"><a href="#">Danh sách sản phẩm</a></li>
             </ul>
             <div id="clock"></div>
         </div>
@@ -11,7 +12,7 @@
                     <div class="tile-body">
                         <div class="row element-button">
                             <div class="col-sm-2">
-                              <a class="btn btn-add btn-sm" href="<?=ROOT_PATH?>product/create" title="Thêm"><i class="fas fa-plus"></i>
+                              <a class="btn btn-add btn-sm" href="<?=ROOT_PATH?>admin/product/create" title="Thêm"><i class="fas fa-plus"></i>
                                 Tạo mới sản phẩm</a>
                             </div>
                         </div>
@@ -69,7 +70,7 @@
                                     <td>99999đ</td>
                                     <td>tên danh mục</td>
                                     <td>
-                                        <a href="<?=ROOT_PATH?>product/edit?ma_sp=<?$pro->ma_sp?>">
+                                        <a href="<?=ROOT_PATH?>admin/product/edit?ma_sp=<?=$pro->ma_sp?>">
                                             <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
                                             data-target="#ModalUP"><i class="fas fa-edit"></i></button>
                                         </a>
