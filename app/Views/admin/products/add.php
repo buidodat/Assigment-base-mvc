@@ -48,8 +48,10 @@
                     </div>
                 </div>
                 <input type="submit" class="btn btn-save" value="Lưu Lại">
-                <a class="btn btn-cancel" href="index.php?act=danh-sach-san-pham">Hủy bỏ</a>
-
+                <a class="btn btn-cancel" href="<?=ROOT_PATH?>admin/product/list">Hủy bỏ</a>
+            </div>
+        </div>
+    </div>
 </form>
 
 </main>

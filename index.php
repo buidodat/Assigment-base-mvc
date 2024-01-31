@@ -11,7 +11,9 @@ use App\Controllers\CartController;
 use App\Controllers\ProductDentailController;
 use App\Controllers\CheckoutController;
 
+//**@admin */
 use App\Controllers\ProductController;
+use App\Controllers\CategoryController;
 require_once __DIR__."/env.php";
 require_once __DIR__."/config.php";
 
@@ -31,12 +33,23 @@ Router::get("/cart",[CartController::class, 'index']);
 Router::get("/productdentail",[ProductDentailController::class, 'detail']);
 Router::get("/checkout",[CheckoutController::class, 'index']);
 
-//admin 
+////----admin------
+//@products
 Router::get("/admin/product/list",[ProductController::class, 'index']);
+
 Router::get("/admin/product/create",[ProductController::class, 'create']);
 Router::post("/admin/product/create",[ProductController::class, 'storeCreate']);
 
 Router::get("/admin/product/edit",[ProductController::class, 'edit']);
 Router::post("/admin/product/edit",[ProductController::class, 'storeEdit']);
+
+//@categories
+Router::get("/admin/category/list",[CategoryController::class, 'index']);
+
+Router::get("/admin/category/create",[CategoryController::class, 'create']);
+Router::post("/admin/category/create",[CategoryController::class, 'storeCreate']);
+
+Router::get("/admin/category/edit",[CategoryController::class, 'edit']);
+Router::post("/admin/category/edit",[CategoryController::class, 'storeEdit']);
 
 $router->resolve();

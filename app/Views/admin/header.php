@@ -51,15 +51,15 @@
     <ul class="app-menu">
       <li><a class="app-menu__item " href="index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
             class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item" href="index.php?act=danh-sach-danh-muc"><i
+      <li><a class="app-menu__item" href="<?=ROOT_PATH?>admin/category/list"><i
               class='app-menu__icon bx bxs-category-alt'></i><span class="app-menu__label">Quản lý danh mục</span></a>
       </li>
-      <li><a class="app-menu__item" href="index.php?act=danh-sach-san-pham"><i
+      <li><a class="app-menu__item" href="<?=ROOT_PATH?>admin/product/list"><i
             class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
       </li>
       <li><a class="app-menu__item" href="index.php?act=quan-ly-binh-luan"><i class="app-menu__icon bx bx-comment"></i><span class="app-menu__label">Quản lý bình luận</span></a>
       </li>
-      <li><a class="app-menu__item" href="index.php?act=quan-ly-tai-khoan"><i class='app-menu__icon bx bx-user-voice'></i><span
+      <li><a class="app-menu__item" href="<?=ROOT_PATH?>admin/account/list"><i class='app-menu__icon bx bx-user-voice'></i><span
             class="app-menu__label">Quản lý tài khoản</span></a></li>
       <li><a class="app-menu__item" href="index.php?act=danh-sach-don-hang"><i class='app-menu__icon bx bx-task'></i><span
             class="app-menu__label">Quản lý đơn hàng</span></a></li>
