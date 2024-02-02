@@ -6,9 +6,11 @@ use App\Models\SanPhamModel;
 class ProductController extends BaseController{
     public function index(){
         $products = SanPhamModel::all();
+        //lấy thông tin message
+        $message = $_COOKIE['mesage']??"";
         return $this->viewadmin(
             "admin/products/list",
-            ["products"=>$products]
+            ["products"=>$products ,"message" => $message]
         );
     }
     public function create(){

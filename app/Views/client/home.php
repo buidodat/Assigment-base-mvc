@@ -56,7 +56,7 @@ use App\Models\SanPhamChiTietModel;
                     <div class="product-slider swiper-container anime-element-multi">
                         <div class="swiper-wrapper">
                             <?php
-                                $spdm = SanPhamModel::where("ma_dm","=","$dm->ma_dm")->get();
+                                $spdm = SanPhamModel::sanPhamHomeWhereDanhMuc($dm->ma_dm);
                                 foreach($spdm as $sp):
                                     // $spct = SanPhamChiTietModel::where("ma_sp","=",$sp->ma_sp)->get();
                             ?>
@@ -93,8 +93,12 @@ use App\Models\SanPhamChiTietModel;
                                             <i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">99</span>
-                                            <span class="old-price"><del>88</del></span>
+                                            <?php 
+                                                $priceFake= number_format($sp->gia_min,0,",",".")."đ";
+                                                $priceReal = number_format($sp->gia_min - $sp->giam_gia,0,",",".")."đ";
+                                            ?>
+                                            <span class="regular-price "><?= $priceReal?></span>
+                                            <span class="old-price"><del><?= $priceFake ?></del></span>
                                         </div>
                                         <a href="cart.html" class="btn product-cart">Add to Cart</a>
                                     </div>
