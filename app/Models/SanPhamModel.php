@@ -18,4 +18,15 @@ class SanPhamModel extends BaseModel{
         $stmt->execute();
         return $stmt-> fetchAll(PDO::FETCH_CLASS);
     }
+    public static function allProduct(){
+        $model = new static;
+        $model->sqlBuilder ="SELECT sp.ma_sp, ten_sp, hinh, mo_ta,  MIN(don_gia) as gia_min, Max(don_gia) as gia_max, sum(so_luong) as tong_so_luong, trang_thai, dm.ten_dm
+        FROM $model->tableName AS sp
+        LEFT JOIN sanphamchitiet AS spct on sp.ma_sp = spct.ma_sp
+        JOIN danhmuc as dm on dm.ma_dm = sp.ma_dm
+        GROUP BY sp.ma_sp";
+        $stmt =$model -> conn->prepare($model->sqlBuilder);
+        $stmt->execute();
+        return $stmt-> fetchAll(PDO::FETCH_CLASS);
+    }
 }

@@ -6,20 +6,20 @@ class CategoryController extends BaseController{
     public function index(){
         $categories = DanhMucModel::all();
         return $this->viewadmin(
-            "admin/categories/list",
+            "categories/list",
             ["categories"=>$categories]
         );
     }
     public function create(){
         return $this->viewadmin(
-            "admin/categories/add",
+            "categories/add",
         );
     }
     public function edit(){
         $ma_dm = $_GET['ma_dm'];
         $ct = DanhMucModel::find($ma_dm);
         return $this->viewadmin(
-            "admin/categories/edit",
+            "categories/edit",
             [
                 "ct"=>$ct,
             ]
@@ -36,5 +36,13 @@ class CategoryController extends BaseController{
         $data = $_POST;
         DanhMucModel::insert($data);
         header("Location: " . ROOT_PATH . "admin/category/list");
+    }
+    public function delete(){
+        $id = $_GET['ma_dm'];
+        DanhMucModel::delete($id);
+        //thông báo 
+        setcookie("message", "Xóa dữ liệu thành công", time()+2);
+        header("Location: " . ROOT_PATH . "admin/category/list");
+        die();
     }
 }

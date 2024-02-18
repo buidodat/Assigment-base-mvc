@@ -10,7 +10,7 @@ class BaseController{
     public function viewadmin($path, $data=[]){
         extract($data);
         include_once "app/Views/admin/header.php";
-        include_once "app/Views/$path.php";
+        include_once "app/Views/admin/$path.php";
         include_once "app/Views/admin/footer.php";
     }
 }

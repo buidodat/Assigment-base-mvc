@@ -49,37 +49,38 @@
                             <tbody>
                                 <?php 
                                     foreach($products as $pro): 
-                                        // $suasp ="index.php?act=sua-san-pham&id_sanpham=$id";
-                                        // $danhsachbienthe ="index.php?act=danh-sach-bien-the&id_sanpham=$id";
-                                        // $themmoibienthe ="index.php?act=them-moi-bien-the&id_sanpham=$id";
-                                        // $thongbao='';
-                                        // if(check_thetich_in_sanpham($id)==3){
-                                        //     $themmoibienthe="";
-                                        //     $thongbao = "alert('Sản phẩm đã đủ biến thể, không thể thêm!')";
-                                        // }
                                 ?>
                                 <tr>
                                     <td><?=$pro->ma_sp?></td>
                                     <td><?=$pro->ten_sp?></td>
                                     <td> <img src="<?=ROOT_PATH ."images/".$pro->hinh?>" width="50" ></td>
-                                    <td>9999</td>
+                                    <td><?= $pro->tong_so_luong??"" ?></td>
                                     <td>
-                                        <!-- <span class="badge
-                                        </span> -->15
+                                        <span class="badge <?=$pro->tong_so_luong==''?"bg-warning":($pro->tong_so_luong==0?"bg-danger":"bg-success");?>">
+                                        <?=$pro->tong_so_luong==''?"Chưa nhập biến thể":($pro->tong_so_luong==0?"Hết Hàng":"Còn Hàng");?>
+                                        </span>
                                     </td>
-                                    <td>99999đ</td>
-                                    <td>tên danh mục</td>
+                                    <?php 
+                                       $giamin = number_format($pro->gia_min,0,",",".") ;
+                                       $giamax = number_format($pro->gia_max,0,",",".") ;
+                                       $giaHienThi = "$giamin - $giamax đ";
+                                       if($giamin==$giamax){
+                                        $giaHienThi = "$giamin đ";
+                                       }
+                                    ?>
+                                    <td><?= $giaHienThi ?></td>
+                                    <td><?= $pro->ten_dm ?></td>
                                     <td>
                                         <a href="<?=ROOT_PATH?>admin/product/edit?ma_sp=<?=$pro->ma_sp?>">
                                             <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
                                             data-target="#ModalUP"><i class="fas fa-edit"></i></button>
                                         </a>
-                                        <a href="">
+                                        <a href="<?=ROOT_PATH?>admin/product/dentail?ma_sp=<?=$pro->ma_sp?>">
                                             <button class="btn btn-eye btn-sm trash" type="button" title="Xem">
                                                 <i class="fas fa-eye"></i>
                                             </button>   
                                         </a>
-                                        <a href="">
+                                        <a href="<?=ROOT_PATH?>admin/product/dentail/create?ma_sp=<?=$pro->ma_sp?>">
                                             <button class="btn btn-add btn-sm trash" type="button" title="Thêm"
                                                 ><i class="fas fa-plus"></i> 
                                             </button>   
